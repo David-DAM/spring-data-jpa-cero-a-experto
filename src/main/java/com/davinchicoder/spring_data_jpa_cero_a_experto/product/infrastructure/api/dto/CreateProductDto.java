@@ -9,8 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Data
 public class CreateProductDto {
-
-    private Long id;
+    
     @NotBlank
     private String name;
     @Length(min = 10, max = 255, message = "Description must be between 10 and 255 characters")

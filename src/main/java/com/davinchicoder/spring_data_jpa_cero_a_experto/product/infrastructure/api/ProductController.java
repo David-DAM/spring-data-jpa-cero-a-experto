@@ -2,12 +2,14 @@ package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.
 
 import com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator.Mediator;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.create.CreateProductRequest;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.create.CreateProductResponse;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.delete.DeleteProductRequest;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.update.UpdateProductRequest;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getAll.GetAllProductRequest;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getAll.GetAllProductResponse;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById.GetProductByIdRequest;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById.GetProductByIdResponse;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.CreateProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.ProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.UpdateProductDto;
@@ -68,15 +70,17 @@ public class ProductController implements ProductApi {
     @PostMapping("")
     public ResponseEntity<Void> saveProduct(@ModelAttribute @Valid CreateProductDto productDto) {
 
-        log.info("Saving product with id {}", productDto.getId());
+        log.info("Saving product");
 
         CreateProductRequest request = productMapper.mapToCreateProductRequest(productDto);
 
-        mediator.dispatch(request);
+        CreateProductResponse response = mediator.dispatch(request);
 
-        log.info("Saved product with id {}", productDto.getId());
+        Product product = response.getProduct();
 
-        return ResponseEntity.created(URI.create("/api/v1/products/".concat(productDto.getId().toString()))).build();
+        log.info("Saved product with id {}", product.getId());
+
+        return ResponseEntity.created(URI.create("/api/v1/products/".concat(product.getId().toString()))).build();
     }
 
     @Operation(summary = "Update product", description = "Update product")
