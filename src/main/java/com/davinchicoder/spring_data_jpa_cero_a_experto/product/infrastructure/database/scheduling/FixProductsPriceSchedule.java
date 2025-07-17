@@ -1,4 +1,4 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.scheduling;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.scheduling;
 
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port.ProductRepository;
 import lombok.RequiredArgsConstructor;
