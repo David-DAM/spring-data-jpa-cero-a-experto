@@ -9,5 +9,7 @@ public class PaginationQuery {
 
     private int page;
     private int size;
+    private String sortBy;
+    private String direction;
 
 }
