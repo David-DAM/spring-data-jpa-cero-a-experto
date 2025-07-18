@@ -12,6 +12,7 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.quer
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById.GetProductByIdRequest;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById.GetProductByIdResponse;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.ProductFilter;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.CreateProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.ProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.UpdateProductDto;
@@ -43,14 +44,22 @@ public class ProductController implements ProductApi {
             @RequestParam(defaultValue = "0") int pageNumber,
             @RequestParam(defaultValue = "5") int pageSize,
             @RequestParam(defaultValue = "id") String sortBy,
-            @RequestParam(defaultValue = "asc") String direction
+            @RequestParam(defaultValue = "asc") String direction,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String description,
+            @RequestParam(required = false) Double priceMin,
+            @RequestParam(required = false) Double priceMax
     ) {
 
         log.info("Getting all products");
 
         PaginationQuery paginationQuery = new PaginationQuery(pageNumber, pageSize, sortBy, direction);
 
-        GetAllProductResponse response = mediator.dispatch(new GetAllProductRequest(paginationQuery));
+        ProductFilter productFilter = new ProductFilter(name, description, priceMin, priceMax);
+
+        GetAllProductRequest getAllProductRequest = new GetAllProductRequest(paginationQuery, productFilter);
+
+        GetAllProductResponse response = mediator.dispatch(getAllProductRequest);
 
         PaginationResult<Product> productsPage = response.getProductsPage();
 

@@ -3,6 +3,7 @@ package com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.common.domain.PaginationQuery;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.common.domain.PaginationResult;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.ProductFilter;
 
 import java.util.Optional;
 
@@ -12,7 +13,7 @@ public interface ProductRepository {
 
     Optional<Product> findById(Long id);
 
-    PaginationResult<Product> findAll(PaginationQuery paginationQuery);
+    PaginationResult<Product> findAll(PaginationQuery paginationQuery, ProductFilter productFilter);
 
     void deleteById(Long id);
 }

@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 public interface ProductApi {
 
-    ResponseEntity<PaginationResult<ProductDto>> getAllProducts(int pageNumber, int pageSize, String sortBy, String direction);
+    ResponseEntity<PaginationResult<ProductDto>> getAllProducts(
+            int pageNumber, int pageSize, String sortBy, String direction, String name, String description, Double priceMin, Double priceMax
+    );
 
     ResponseEntity<ProductDto> getProductById(@PathVariable Long id);
 
