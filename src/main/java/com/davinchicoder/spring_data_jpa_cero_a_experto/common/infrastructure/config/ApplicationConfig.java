@@ -1,4 +1,4 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.common.config;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.common.infrastructure.config;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;

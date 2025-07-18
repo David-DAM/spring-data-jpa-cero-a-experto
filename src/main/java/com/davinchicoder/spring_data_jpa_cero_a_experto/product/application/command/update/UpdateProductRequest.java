@@ -1,6 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.update;
 
-import com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator.Request;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.common.application.mediator.Request;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 

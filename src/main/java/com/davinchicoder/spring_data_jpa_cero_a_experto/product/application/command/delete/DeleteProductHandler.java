@@ -1,6 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.command.delete;
 
-import com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator.RequestHandler;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.common.application.mediator.RequestHandler;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.common.application.mediator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

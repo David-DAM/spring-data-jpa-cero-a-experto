@@ -1,4 +1,4 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.common.util;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.common.infrastructure.util;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;

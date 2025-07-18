@@ -1,6 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById;
 
-import com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator.RequestHandler;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.common.application.mediator.RequestHandler;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.exception.ProductNotFoundException;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port.ProductRepository;

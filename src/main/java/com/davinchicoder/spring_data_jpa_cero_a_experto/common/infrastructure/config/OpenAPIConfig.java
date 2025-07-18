@@ -1,4 +1,4 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.common.config;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.common.infrastructure.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;

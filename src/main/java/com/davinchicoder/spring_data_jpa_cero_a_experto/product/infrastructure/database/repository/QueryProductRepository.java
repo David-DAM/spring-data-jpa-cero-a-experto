@@ -1,6 +1,8 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.repository;
 
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,6 +12,7 @@ import java.util.Optional;
 
 @Repository
 public interface QueryProductRepository extends JpaRepository<ProductEntity, Long> {
+
     Optional<ProductEntity> findByNameContaining(String name);
 
     List<ProductEntity> findAllByPriceBetween(Double priceAfter, Double priceBefore);
@@ -27,4 +30,6 @@ public interface QueryProductRepository extends JpaRepository<ProductEntity, Lon
     boolean existsByName(String name);
 
     long countByPrice(Double price);
+
+    Page<ProductEntity> findAll(Pageable pageable);
 }

@@ -1,6 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.query.getById;
 
-import com.davinchicoder.spring_data_jpa_cero_a_experto.common.mediator.Request;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.common.application.mediator.Request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
