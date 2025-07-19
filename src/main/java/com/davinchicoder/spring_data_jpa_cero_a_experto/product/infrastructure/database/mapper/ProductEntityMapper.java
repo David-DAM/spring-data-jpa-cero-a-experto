@@ -1,5 +1,7 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.mapper;
 
+import com.davinchicoder.spring_data_jpa_cero_a_experto.category.domain.Category;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.category.infrastructure.CategoryEntity;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductEntity;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.review.domain.Review;
@@ -24,5 +26,11 @@ public interface ProductEntityMapper {
 
     @Mapping(target = "product", ignore = true)
     ReviewEntity mapToReviewEntity(Review review);
+
+    @Mapping(target = "products", ignore = true)
+    Category mapToCategory(CategoryEntity categoryEntity);
+
+    @Mapping(target = "products", ignore = true)
+    CategoryEntity mapToCategoryEntity(Category category);
 
 }

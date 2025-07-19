@@ -1,5 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity;
 
+import com.davinchicoder.spring_data_jpa_cero_a_experto.category.domain.Category;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.productDetail.domain.ProductDetail;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.review.domain.Review;
 import lombok.Builder;
@@ -19,5 +20,6 @@ public class Product {
 
     private ProductDetail productDetail;
     private List<Review> reviews;
+    private List<Category> categories;
 
 }
