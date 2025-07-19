@@ -2,6 +2,8 @@ package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ProductDto {
 
@@ -11,5 +13,6 @@ public class ProductDto {
     private Double price;
     private String image;
     private String provider;
+    private List<ReviewDto> reviews;
 
 }

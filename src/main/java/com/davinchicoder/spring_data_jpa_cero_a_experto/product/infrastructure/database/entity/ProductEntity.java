@@ -1,8 +1,12 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity;
 
 import com.davinchicoder.spring_data_jpa_cero_a_experto.productDetail.infrastructure.ProductDetailEntity;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.review.infrastructure.ReviewEntity;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -20,5 +24,8 @@ public class ProductEntity {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "product_detail_id")
-    private ProductDetailEntity productDetailEntity;
+    private ProductDetailEntity productDetail;
+
+    @OneToMany(mappedBy = "product")
+    private List<ReviewEntity> reviews = new ArrayList<>();
 }
