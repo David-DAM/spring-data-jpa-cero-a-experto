@@ -7,6 +7,7 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.a
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.ProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.UpdateProductDto;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
 
@@ -17,6 +18,7 @@ public interface ProductMapper {
 
     UpdateProductRequest mapToUpdateProductRequest(UpdateProductDto updateProductDto);
 
+    @Mapping(target = "provider", source = "productDetail.provider")
     ProductDto mapToProductDto(Product product);
 
 }

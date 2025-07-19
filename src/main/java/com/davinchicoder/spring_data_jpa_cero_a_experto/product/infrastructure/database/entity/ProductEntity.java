@@ -1,5 +1,6 @@
 package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity;
 
+import com.davinchicoder.spring_data_jpa_cero_a_experto.productDetail.infrastructure.ProductDetailEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -17,4 +18,7 @@ public class ProductEntity {
     private Double price;
     private String image;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_detail_id")
+    private ProductDetailEntity productDetailEntity;
 }

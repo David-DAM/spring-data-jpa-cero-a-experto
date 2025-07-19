@@ -27,7 +27,7 @@ public class ProductSeeder implements CommandLineRunner {
 
         if (count == 0) {
 
-            Resource resource = resourceLoader.getResource("classpath:data.json");
+            Resource resource = resourceLoader.getResource("classpath:products.json");
 
             List<ProductEntity> products = objectMapper.readValue(resource.getInputStream(), new TypeReference<>() {
             });

@@ -6,9 +6,9 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Pr
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.ProductFilter;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port.ProductRepository;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductEntity;
-import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductSpecification;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.mapper.ProductEntityMapper;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.repository.QueryProductRepository;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.specification.ProductSpecification;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;

@@ -1,5 +1,6 @@
-package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity;
+package com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.specification;
 
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductEntity;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ProductSpecification {
