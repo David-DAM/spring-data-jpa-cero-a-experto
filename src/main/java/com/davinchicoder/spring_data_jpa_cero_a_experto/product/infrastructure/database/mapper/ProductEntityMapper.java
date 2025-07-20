@@ -6,10 +6,7 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Pr
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.database.entity.ProductEntity;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.review.domain.Review;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.review.infrastructure.ReviewEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingConstants;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING, unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface ProductEntityMapper {
@@ -32,5 +29,12 @@ public interface ProductEntityMapper {
 
     @Mapping(target = "products", ignore = true)
     CategoryEntity mapToCategoryEntity(Category category);
+
+    @AfterMapping
+    default void linkReviews(@MappingTarget ProductEntity productEntity) {
+        if (productEntity.getReviews() != null) {
+            productEntity.getReviews().forEach(r -> r.setProduct(productEntity));
+        }
+    }
 
 }

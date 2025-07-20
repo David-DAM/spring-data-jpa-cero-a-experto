@@ -5,7 +5,6 @@ import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.web.multipart.MultipartFile;
 
 @Data
 public class UpdateProductDto {
@@ -18,6 +17,8 @@ public class UpdateProductDto {
     @DecimalMin(value = "0.01", inclusive = false)
     @DecimalMax(value = "999.99", inclusive = false)
     private Double price;
-    private MultipartFile file;
+    private String provider;
+    private ReviewDto review;
+    private Long categoryId;
 
 }

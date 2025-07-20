@@ -6,7 +6,9 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.application.comm
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Product;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.CreateProductDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.ProductDto;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.ReviewDto;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.infrastructure.api.dto.UpdateProductDto;
+import com.davinchicoder.spring_data_jpa_cero_a_experto.review.domain.Review;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;
@@ -23,6 +25,9 @@ public interface ProductMapper {
 
     @Mapping(target = "provider", source = "productDetail.provider")
     ProductDto mapToProductDto(Product product);
+
+    @Mapping(target = "product", ignore = true)
+    Review mapToReview(ReviewDto reviewDto);
 
     default List<String> mapToCategoryNames(List<Category> categories) {
         return categories.stream().map(Category::getName).toList();
