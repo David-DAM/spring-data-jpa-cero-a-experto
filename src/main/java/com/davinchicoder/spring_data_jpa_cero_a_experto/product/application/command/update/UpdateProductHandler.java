@@ -8,6 +8,7 @@ import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.entity.Pr
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.exception.ProductNotFoundException;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.product.domain.port.ProductRepository;
 import com.davinchicoder.spring_data_jpa_cero_a_experto.productDetail.domain.ProductDetail;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional(rollbackOn = Exception.class)
 public class UpdateProductHandler implements RequestHandler<UpdateProductRequest, Void> {
 
     private final ProductRepository productRepository;
