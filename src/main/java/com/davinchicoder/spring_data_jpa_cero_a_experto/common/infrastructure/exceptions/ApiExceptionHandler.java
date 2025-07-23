@@ -25,7 +25,7 @@ public class ApiExceptionHandler {
             errors.put(error.getField(), error.getDefaultMessage());
         });
 
-        return new ErrorMessage(exception.getMessage(), exception.getClass().getSimpleName(), request.getRequestURI(), errors);
+        return new ErrorMessage("Error in validation", exception.getClass().getSimpleName(), request.getRequestURI(), errors);
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
