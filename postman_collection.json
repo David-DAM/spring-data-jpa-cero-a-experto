@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "6ea62c0e-6f7a-4743-bf5c-76100f8d8b86",
-		"name": "Spring Boot Web de Cero a Experto",
+		"_postman_id": "05dfefd6-faf0-4df9-b66c-8da789e7398b",
+		"name": "Spring Boot Data JPA de Cero a Experto",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23080126"
 	},
@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{BASE_URL}}/products",
+					"raw": "{{BASE_URL}}/products?pageSize=5&pageNumber=0&sortBy=id&direction=asc&name=&description=&priceMin=0&priceMax=999",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -22,8 +22,35 @@
 					"query": [
 						{
 							"key": "pageSize",
-							"value": "5",
-							"disabled": true
+							"value": "5"
+						},
+						{
+							"key": "pageNumber",
+							"value": "0"
+						},
+						{
+							"key": "sortBy",
+							"value": "id"
+						},
+						{
+							"key": "direction",
+							"value": "asc"
+						},
+						{
+							"key": "name",
+							"value": ""
+						},
+						{
+							"key": "description",
+							"value": ""
+						},
+						{
+							"key": "priceMin",
+							"value": "0"
+						},
+						{
+							"key": "priceMax",
+							"value": "999"
 						}
 					]
 				}
@@ -58,11 +85,6 @@
 				"body": {
 					"mode": "formdata",
 					"formdata": [
-						{
-							"key": "id",
-							"value": "1",
-							"type": "text"
-						},
 						{
 							"key": "name",
 							"value": "Product 1",
@@ -103,34 +125,13 @@
 				"method": "PUT",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "Product 1",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "Description 1",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "150.00",
-							"type": "text"
-						},
-						{
-							"key": "file",
-							"type": "file",
-							"src": "/C:/Users/david/Downloads/fondo.jpg"
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Noise Cancelling Headphones\",\r\n    \"description\": \"High-fidelity headphones with active noise cancellation\",\r\n    \"price\": 159.95,\r\n    \"provider\": \"Samsung\",\r\n    \"review\": {\r\n        \"comment\": \"Not Fail\",\r\n        \"score\": 5\r\n    },\r\n    \"categoryId\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
 					"raw": "{{BASE_URL}}/products",
@@ -161,7 +162,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": ""
+							"value": "8"
 						}
 					]
 				}
